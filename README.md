@@ -20,7 +20,11 @@ $ ln -s <PATH_TO_FRESH_GIT_CLONE>/cocoapi/PythonAPI/pycocotools pycocotools
  
  
 ### step to run
- 
+ 0) compile the dependencies
+```shell
+$ cd lib
+$ python setup.py build develop
+```
  1) fill the colony with images
  2) add pth to the model folder(saved in baidu pan 156)
  3) run train.sh
