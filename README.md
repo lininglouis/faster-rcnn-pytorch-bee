@@ -2,6 +2,7 @@
  
  original repo: https://github.com/jwyang/faster-rcnn.pytorch
  
+ ### problem 1
  when coming across problem "no module named _mask"
  you need to install the latest cocoapi by
  ```shell
@@ -12,7 +13,7 @@ $ python setup.py install
  ```
  
  
- step to run
+### step to run
  
  1) fill the colony with images
  2) add pth to the model folder(saved in baidu pan 156)
