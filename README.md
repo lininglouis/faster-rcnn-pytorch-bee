@@ -10,6 +10,12 @@ $ git clone https://github.com/pdollar/coco.git
 $ cd coco/PythonAPI
 $ make
 $ python setup.py install
+
+then change the old cocoapi to your built latest cocoapi
+$ cd lib
+$ mv pycocotools/ pycocotools_old
+$ ln -s <PATH_TO_FRESH_GIT_CLONE>/cocoapi/PythonAPI/pycocotools pycocotools
+
  ```
  
  
