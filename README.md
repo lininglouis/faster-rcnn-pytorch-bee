@@ -31,3 +31,11 @@ $ python setup.py build develop
  1) fill the colony with images
  2) add pth to the model folder(saved in baidu pan 156)
  3) run train.sh
+
+
+
+### basic info of bee data
+8027 images
+7974 images with one box
+1606 test images
+
