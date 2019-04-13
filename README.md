@@ -36,6 +36,8 @@ $ python setup.py build develop
 
 ### basic info of bee data
 8027 images
+
 7974 images with one box
+
 1606 test images
 
