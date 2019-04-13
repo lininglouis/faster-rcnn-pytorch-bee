@@ -2,6 +2,9 @@
  
  original repo: https://github.com/jwyang/faster-rcnn.pytorch
  
+ ### construct VOC-like dataset
+ 
+ 
  ### problem 1
  when coming across problem "no module named _mask"
  you need to install the latest cocoapi by
