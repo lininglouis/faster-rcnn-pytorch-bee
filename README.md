@@ -1,6 +1,6 @@
  A faster rcnn pytorch version for bee
  
- original repo: https://github.com/jwyang/faster-rcnn.pytorch
+ original repo: https://github.com/jwyang/faster-rcnn.pytorch  **pytorch 1.0 branch**
  
  ### construct VOC-like dataset
  
