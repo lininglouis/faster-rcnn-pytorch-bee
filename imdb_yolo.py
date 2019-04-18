@@ -47,9 +47,6 @@ def put_boxes(boxes, img):
     return img_canvas
 
 
-det_file = '/home/ubuntu/github/frcnn_pytorch_bee/output/res101/colony_2020_test/faster_rcnn_10/detections.pkl'
-det_file = '/home/ubuntu/github/frcnn_pytorch_bee/yolo_result/detection_1.0_1e-4.pkl'
-
 yolo_pkl_dir = '/home/ubuntu/github/frcnn_pytorch_bee/yolo/yolo_det_pkl/detect*pkl'
 yolo_mAP_dir = '/home/ubuntu/github/frcnn_pytorch_bee/yolo/yolo_mAP'
 

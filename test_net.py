@@ -168,7 +168,7 @@ if __name__ == '__main__':
   fasterRCNN.create_architecture()
 
   print("load checkpoint %s" % (load_name))
-  checkpoint = torch.load(load_name)
+  checkpoint = torch.load(load_name, map_location='cpu')
   fasterRCNN.load_state_dict(checkpoint['model'])
   if 'pooling_mode' in checkpoint.keys():
     cfg.POOLING_MODE = checkpoint['pooling_mode']
@@ -212,8 +212,7 @@ if __name__ == '__main__':
 
   save_name = 'faster_rcnn_10'
   num_images = len(imdb.image_index)
-  all_boxes = [[[] for _ in xrange(num_images)]
-               for _ in xrange(imdb.num_classes)]
+  all_boxes = [[[] for _ in xrange(num_images)]  for _ in xrange(imdb.num_classes)]
 
   output_dir = get_output_dir(imdb, save_name)
   dataset = roibatchLoader(roidb, ratio_list, ratio_index, 1, \
@@ -276,6 +275,7 @@ if __name__ == '__main__':
       if vis:
           im = cv2.imread(imdb.image_path_at(i))
           im2show = np.copy(im)
+
       for j in xrange(1, imdb.num_classes):
           inds = torch.nonzero(scores[:,j]>thresh).view(-1)
           # if there is det
@@ -321,10 +321,13 @@ if __name__ == '__main__':
           #cv2.imshow('test', im2show)
           #cv2.waitKey(0)
 
+  print(all_boxes)
+  print(len(all_boxes), len(all_boxes[0]))
   with open(det_file, 'wb') as f:
       pickle.dump(all_boxes, f, pickle.HIGHEST_PROTOCOL)
 
   print('Evaluating detections')
+
   imdb.evaluate_detections(all_boxes, output_dir)
 
   end = time.time()
